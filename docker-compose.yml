@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend  # Path to the React app directory
+    ports:
+      - "80:80"  # Expose React app on port 80
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
